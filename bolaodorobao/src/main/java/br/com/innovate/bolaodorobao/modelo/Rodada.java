@@ -22,5 +22,44 @@ public class Rodada implements Serializable{
 	
 	@ManyToOne
 	private Bolao bolao;
+	
+	
+	
+	public Rodada() {
+		
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Bolao getBolao() {
+		return bolao;
+	}
+
+	public void setBolao(Bolao bolao) {
+		this.bolao = bolao;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Rodada other = (Rodada) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
 
 }
